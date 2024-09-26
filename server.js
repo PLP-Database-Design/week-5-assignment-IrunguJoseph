@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 // Configure environment
 dotenv.config();
 
-// Creating connection
+// Connecting to the database
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USERNAME,
@@ -15,25 +15,21 @@ const db = mysql.createConnection({
 });
 
 
-// Retrieve all patients
+// Question 1: Create a GET endpoint that retrieves all patients and displays their:
 app.get('', (req, res) => {
-    const getPatients = "SELECT * FROM patients"
+    const getPatients = "SELECT patient_id, first_name, last_name, date_of_birth FROM patients"
     db.query(getPatients, (err, data) => {
         // If error occur
         if(err) {
             return res.status(400).send("Fail to get patients", err);
+        }else {
+            //Display the records to the browser 
+            res.status(200).send(data);
         }
 
-        res.status(200).send(data);
+        
     });
 });
-
-// Send to browser
-app.get('', (req, res) => {
-    res.send("Hello World! Wish you a beautifull week.")
-});
-// Question 1 goes here
-
 
 // Question 2 goes here
 
