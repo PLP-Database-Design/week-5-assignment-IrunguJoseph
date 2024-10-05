@@ -16,47 +16,47 @@ const db = mysql.createConnection({
 
 
 // // Question 1: 
-// app.get('', (req, res) => {
-//     const getPatients = "SELECT patient_id, first_name, last_name, date_of_birth FROM patients"
-//     db.query(getPatients, (err, data) => {
-//         // If error occur
-//         if(err) {
-//             return res.status(400).send("Fail to get patients", err);
-//         }else {
-//             //Display the records to the browser 
-//             res.status(200).send(data);
-//         }    
-//     });
-// });
+app.get('', (req, res) => {
+    const getPatients = "SELECT patient_id, first_name, last_name, date_of_birth FROM patients"
+    db.query(getPatients, (err, data) => {
+        // If error occur
+        if(err) {
+            return res.status(400).send("Fail to get patients", err);
+        }else {
+            //Display the records to the browser 
+            res.status(200).send(data);
+        }    
+    });
+});
 
 // Question 2:
-// app.get('', (req, res) => {
-//     const getPatients = "SELECT first_name, last_name, provider_specialty FROM providers"
-//     db.query(getPatients, (err, data) => {
-//         // If error occur
-//         if(err) {
-//             return res.status(400).send("Fail to get providers", err);
-//         }else {
-//             //Display the records to the browser 
-//             res.status(200).send(data);
-//         }    
-//     });
-// });
+app.get('', (req, res) => {
+    const getPatients = "SELECT first_name, last_name, provider_specialty FROM providers"
+    db.query(getPatients, (err, data) => {
+        // If error occur
+        if(err) {
+            return res.status(400).send("Fail to get providers", err);
+        }else {
+            //Display the records to the browser 
+            res.status(200).send(data);
+        }    
+    });
+});
 
 
 // Question 3:
-// app.get('', (req, res) => {
-//     const getPatients = "SELECT first_name FROM patients"
-//     db.query(getPatients, (err, data) => {
-//         // If error occur
-//         if(err) {
-//             return res.status(400).send("Fail to get patients", err);
-//         }else {
-//             //Display the records to the browser 
-//             res.status(200).send(data);
-//         }    
-//     });
-// });
+app.get('', (req, res) => {
+    const getPatients = "SELECT first_name FROM patients"
+    db.query(getPatients, (err, data) => {
+        // If error occur
+        if(err) {
+            return res.status(400).send("Fail to get patients", err);
+        }else {
+            //Display the records to the browser 
+            res.status(200).send(data);
+        }    
+    });
+});
 
 // Question 4 goes here
 app.get('', (req, res) => {
