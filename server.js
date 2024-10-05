@@ -58,7 +58,7 @@ app.get('', (req, res) => {
     });
 });
 
-// Question 4 goes here
+// Question 4:
 app.get('', (req, res) => {
     const getPatients = "SELECT provider_specialty FROM providers"
     db.query(getPatients, (err, data) => {
